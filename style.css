@@ -1,0 +1,12 @@
+*{
+    /* font-family: 'Nerko One', cursive; */
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: aqua;
+}
+h1{
+    font-family: 'Roboto Slab', serif;
+    text-decoration: underline;
+}
