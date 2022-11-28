@@ -21,24 +21,77 @@
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8  box">
+                <h3 class="mb-5 text-center"> <u>Registration Form </u></h3>
+
                 <form>
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-6">
-                                <label for="fname" class="form-label">FIRST NAME</label>
+                                <h6 for="fname" class="form-label">FIRST NAME:</h6>
                                 <input type="text" class="form-control" id="fname" name="fname">
                             </div>
                             <div class="col-6">
-                                <label for="lname" class="form-label">LAST NAME</label>
+                                <h6 for="lname" class="form-label">LAST NAME:</h6>
                                 <input type="text" name="lname" id="lname" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="email"  class="form-label">ENTER YOUR EMAIL <span class="disabled">(example@gmail.com)</span> </label>
-                        <input type="email" name="email" id="email" class="form-control">
+                        <div class="row">
+                            <div class="col-6">
+                                <h6 for="bithday" class="form-label">BIRTHDAY:</h6>
+                                <input type="date" class="form-control" id="bithday" name="bithday">
+                            </div>
+                            <div class="col-6">
+                                <h6 class="mb-2 pb-1">Gender: </h6>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="femaleGender" value="option1" checked />
+                                    <label class="form-check-label" for="femaleGender">Female</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="maleGender" value="option2" />
+                                    <label class="form-check-label" for="maleGender">Male</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="otherGender" value="option3" />
+                                    <label class="form-check-label" for="otherGender">Other</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-6">
+                                <h6 for="email" class="form-label">EMAIL: <span
+                                        class="disabled">(example@gmail.com)</span> </h6>
+                                <input type="email" name="email" id="email" class="form-control">
+                            </div>
+                            <div class="col-6">
+                                <h6 for="mobile" class="form-label">MOBILE NO.:</h6>
+                                <input type="number" name="mobile" id="mobile" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h6 for="subject" class="form-label"> SELECT SUBJECT</h6>
+                        <select class="form-control">
+                            <option value="1" disabled>Choose option</option>
+                            <option value="2">Subject 1</option>
+                            <option value="3">Subject 2</option>
+                            <option value="4">Subject 3</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <h6 for="profile" class="form=label">PROFILE</h6>
+                        <input type="file" name="profile" id="profile" class="form-control">
+                    </div>
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-primary me-5">Submit</button>
+                    <button type="submit" class="btn btn-secondary">Reset</button>
+                    </div>
                 </form>
             </div>
             <div class="col-2"></div>
