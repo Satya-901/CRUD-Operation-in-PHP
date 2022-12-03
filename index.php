@@ -1,108 +1,141 @@
+<?php include_once('connection.php'); ?>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <!-- ===CDN link for bootsrep === -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <!-- ===FOnr link=== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
-    <!-- ===Custom CSS=== -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form</title>
+  <!-- ===CDN link for bootsrep === -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <!-- ===FOnr link=== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet" />
+  <!-- ===Custom CSS=== -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <h1 class="text-center bg-dark text-light">Student Details</h1>
-    <div class="Container mt-5">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8  box">
-                <h3 class="mb-5 text-center"> <u>Registration Form </u></h3>
+  <h1 class="text-center bg-dark text-light">Student Details</h1>
+  <div class="Container mt-5">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 box">
+        <h3 class="mb-5 text-center"><u>Registration Form </u></h3>
 
-                <form>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 for="fname" class="form-label">FIRST NAME:</h6>
-                                <input type="text" class="form-control" id="fname" name="fname">
-                            </div>
-                            <div class="col-6">
-                                <h6 for="lname" class="form-label">LAST NAME:</h6>
-                                <input type="text" name="lname" id="lname" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 for="bithday" class="form-label">BIRTHDAY:</h6>
-                                <input type="date" class="form-control" id="bithday" name="bithday">
-                            </div>
-                            <div class="col-6">
-                                <h6 class="mb-2 pb-1">Gender: </h6>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="femaleGender" value="option1" checked />
-                                    <label class="form-check-label" for="femaleGender">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="maleGender" value="option2" />
-                                    <label class="form-check-label" for="maleGender">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                        id="otherGender" value="option3" />
-                                    <label class="form-check-label" for="otherGender">Other</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row">
-                            <div class="col-6">
-                                <h6 for="email" class="form-label">EMAIL: <span
-                                        class="disabled">(example@gmail.com)</span> </h6>
-                                <input type="email" name="email" id="email" class="form-control">
-                            </div>
-                            <div class="col-6">
-                                <h6 for="mobile" class="form-label">MOBILE NO.:</h6>
-                                <input type="number" name="mobile" id="mobile" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <h6 for="subject" class="form-label"> SELECT SUBJECT</h6>
-                        <select class="form-control">
-                            <option value="1" disabled>Choose option</option>
-                            <option value="2">Subject 1</option>
-                            <option value="3">Subject 2</option>
-                            <option value="4">Subject 3</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
+        <form action="" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <h6 for="fname" class="form-label">FIRST NAME:</h6>
+                <input type="text" class="form-control" id="fname" name="fname" />
+              </div>
+              <div class="col-6">
+                <h6 for="lname" class="form-label">LAST NAME:</h6>
+                <input type="text" name="lname" id="lname" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <h6 for="bithday" class="form-label">BIRTHDAY:</h6>
+                <input type="date" class="form-control" id="bithday" name="bithday" />
+              </div>
+              <div class="col-6">
+                <h6 class="mb-2 pb-1">Gender:</h6>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female" checked />
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" />
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="other" value="other" />
+                  <label class="form-check-label" for="other">Other</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <h6 for="email" class="form-label">
+                  EMAIL: <span class="disabled">(example@gmail.com)</span>
+                </h6>
+                <input type="email" name="email" id="email" class="form-control" />
+              </div>
+              <div class="col-6">
+                <h6 for="mobile" class="form-label">MOBILE NO.:</h6>
+                <input type="number" name="mobile" id="mobile" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <h6 for="subject" class="form-label">SELECT SUBJECT</h6>
+            <select class="form-control" name="subject">
+              <option value="not selected" disabled>Choose option</option>
+              <option value="subjeect 1">Subject 1</option>
+              <option value="subject 2">Subject 2</option>
+              <option value="subject 3">Subject 3</option>
+            </select>
+          </div>
+          <!-- <div class="mb-3">
                         <h6 for="profile" class="form=label">PROFILE</h6>
                         <input type="file" name="profile" id="profile" class="form-control">
-                    </div>
-                    <div class="text-center">
-                    <button type="submit" class="btn btn-primary me-5">Submit</button>
-                    <button type="submit" class="btn btn-secondary">Reset</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-2"></div>
-        </div>
+                    </div> -->
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary me-5" name="submit">
+              Submit
+            </button>
+            <button type="submit" class="btn btn-secondary">Reset</button>
+          </div>
+        </form>
+        <!-- <div class="alert alert-primary mt-3" role="alert">
+                    <h6 class="text-center" id="msg"> Data inserted success </h6>
+                </div> -->
+      </div>
+      <div class="col-2"></div>
     </div>
+  </div>
 
-
-
-
-    <!-- ===JS CDN link=== -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ===JS CDN link=== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+<?php
+if(isset($_POST['submit']))
+{
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $birthday = date('y-m-d', strtotime($_POST['bithday'])); //to convet date formet to match withthe MYSQL server date formet.
+    $gender = $_POST['gender'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $subject = $_POST['subject'];
+
+
+    $query = "INSERT INTO `form` (`fname`, `lname`, `birthday`, `gender`, `email`, `mobile`, `subject`) VALUES ('$fname', '$lname', '$birthday', '$gender', '$email', '$mobile', '$subject')";
+    $data = mysqli_query($conn, $query);
+    if($data)
+    {
+      ?>
+      <script>
+        window.alert('Data inserted success');
+      </script>
+      <?php
+    }
+    else
+    {
+      ?>
+      <script>
+        window.alert(' Data not inserted !! ');
+      </script>
+      <?php
+    }
+}
+?>
