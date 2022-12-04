@@ -83,10 +83,10 @@
               <option value="subject 3">Subject 3</option>
             </select>
           </div>
-          <!-- <div class="mb-3">
+          <div class="mb-3">
                         <h6 for="profile" class="form=label">PROFILE</h6>
                         <input type="file" name="profile" id="profile" class="form-control">
-                    </div> -->
+                    </div>
           <div class="text-center">
             <button type="submit" class="btn btn-primary me-5" name="submit">
               Submit
@@ -117,15 +117,21 @@ if(isset($_POST['submit']))
     $email = $_POST['email'];
     $mobile = $_POST['mobile'];
     $subject = $_POST['subject'];
+    //image upload to my sql server using php.
+    $filename = $_FILES["profile"]["name"];
+    $tempname = $_FILES["profile"]["tmp_name"];
+    $profile = "images/".$filename;
+    move_uploaded_file($tempname, $profile);
 
 
-    $query = "INSERT INTO `form` (`fname`, `lname`, `birthday`, `gender`, `email`, `mobile`, `subject`) VALUES ('$fname', '$lname', '$birthday', '$gender', '$email', '$mobile', '$subject')";
+    $query = "INSERT INTO `form` (`fname`, `lname`, `birthday`, `gender`, `email`, `mobile`, `subject`, `profile`) VALUES ('$fname', '$lname', '$birthday', '$gender', '$email', '$mobile', '$subject','$profile')";
     $data = mysqli_query($conn, $query);
     if($data)
     {
       ?>
       <script>
         window.alert('Data inserted success');
+        window.location="table.php";
       </script>
       <?php
     }
