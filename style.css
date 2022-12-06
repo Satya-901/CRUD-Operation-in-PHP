@@ -1,24 +1,25 @@
 * {
-    /* font-family: 'Nerko One', cursive; */
+    font-family: 'Roboto Slab', serif;
     margin: 0;
     padding: 0;
 }
 
 body {
-    /* background-color: #dd3077; */
-    background: #f093fb;
-    background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
-    background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
+    background-color: #f093fb;
 }
-
-h1 {
-    font-family: 'Roboto Slab', serif;
-    text-decoration: underline;
+h3
+{
+    color: #f093fb;
+    /* background-color: #f093fb; */
 }
-
 .box {
     background-color: #fff;
     /* border: 2px solid black; */
     border-radius: 10px;
     padding: 40px;
+    padding-top: 20px;
+}
+.mybtn
+{
+    background-color:#f093fb
 }

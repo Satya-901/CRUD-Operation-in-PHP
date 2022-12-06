@@ -2,105 +2,142 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bootstrap demo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Display</title>
+  <!-- ===CDN link for bootsrep === -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <!-- ===font link=== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet" />
+  <!-- font awsome cdn link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <!-- ===Custom CSS=== -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <table class="table align-middle mb-0 bg-white">
-    <thead class="bg-light">
-      <tr>
-        <th>Name</th>
-        <th>Title</th>
-        <th>Status</th>
-        <th>Position</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <div class="d-flex align-items-center">
-            <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px"
-              class="rounded-circle" />
-            <div class="ms-3">
-              <p class="fw-bold mb-1">John Doe</p>
-              <p class="text-muted mb-0">john.doe@gmail.com</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <p class="fw-normal mb-1">Software engineer</p>
-          <p class="text-muted mb-0">IT department</p>
-        </td>
-        <td>
-          <span class="badge badge-success rounded-pill d-inline">Active</span>
-        </td>
-        <td>Senior</td>
-        <td>
-          <button type="button" class="btn btn-link btn-sm btn-rounded">
-            Edit
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex align-items-center">
-            <img src="https://mdbootstrap.com/img/new/avatars/6.jpg" class="rounded-circle" alt=""
-              style="width: 45px; height: 45px" />
-            <div class="ms-3">
-              <p class="fw-bold mb-1">Alex Ray</p>
-              <p class="text-muted mb-0">alex.ray@gmail.com</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <p class="fw-normal mb-1">Consultant</p>
-          <p class="text-muted mb-0">Finance</p>
-        </td>
-        <td>
-          <span class="badge badge-primary rounded-pill d-inline">Onboarding</span>
-        </td>
-        <td>Junior</td>
-        <td>
-          <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-            Edit
-          </button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="d-flex align-items-center">
-            <img src="https://mdbootstrap.com/img/new/avatars/7.jpg" class="rounded-circle" alt=""
-              style="width: 45px; height: 45px" />
-            <div class="ms-3">
-              <p class="fw-bold mb-1">Kate Hunington</p>
-              <p class="text-muted mb-0">kate.hunington@gmail.com</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <p class="fw-normal mb-1">Designer</p>
-          <p class="text-muted mb-0">UI/UX</p>
-        </td>
-        <td>
-          <span class="badge badge-warning rounded-pill d-inline">Awaiting</span>
-        </td>
-        <td>Senior</td>
-        <td>
-          <button type="button" class="btn btn-link btn-rounded btn-sm fw-bold" data-mdb-ripple-color="dark">
-            Edit
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+  <div class="container box mt-5">
+    <h3 class="mb-3 text-center"><u>Displaying All Records</u></h3>
+    <table class="table align-middle mb-0  bg-light">
+      <thead class="bg-secondary">
+        <tr>
+          <th>Profile</th>
+          <th>Registration No.</th>
+          <th>Name</th>
+          <th>Birthday</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Mobile No.</th>
+          <th>Subject</th>
+          <th colspan="3">Action Buttons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        include_once "connection.php";
+        $query = "SELECT * FROM `form`";
+        $data = mysqli_query($conn, $query);
+        $totle = mysqli_num_rows($data);
+
+        //echo $totle;
+        // $fname = $result['fname'];
+        // $lname = $result['lname'];
+        // $name = $fname." ".$lname;
+        // $birthday = $result['birthday'];
+        // $gender = $result['gender'];
+        // $email = $result['email'];
+        // $mobile = $result['mobile'];
+        // $subject = $result['subject'];
+        // $profile = $result['profile'];
+        if ($totle != 0) {
+          while ($result = mysqli_fetch_array($data)) {
+        ?>
+        <tr>
+          <td><img src="<?php echo $result['profile'] ?>" alt="profile" style="width: 45px; height: 45px" /></td>
+          <td>
+            <p class="fw-normal mb-1">546871546</p>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">
+              <?php echo $result['fname'] . " " . $result['lname']; ?>
+            </p>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">
+              <?php echo $result['birthday'] ?>
+            </p>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">
+              <?php echo $result['gender'] ?>
+            </p>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">
+              <?php echo $result['email'] ?>
+            </p>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">
+              <?php echo $result['mobile'] ?>
+            </p>
+          </td>
+          <td>
+            <p class="fw-normal mb-1">
+              <?php echo $result['subject'] ?>
+            </p>
+          </td>
+          <td>
+            <button type="button" class="btn mb-1 mybtn">Edit <i class="fa-solid fa-pen-to-square"></i></button>
+            <!-- <button type="button" class="btn mb-1 btn-danger"><i class="fa-solid fa-trash"></i></button> -->
+            <button type="button" class="btn mb-1 btn-danger" data-bs-toggle="modal" data-bs-target="#deletemodel"><i
+                class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+        <?php
+          }
+          ?>
+
+        <?php
+        } else {
+        ?>
+        <script>
+          window.alert('No Data Available\nPlease insert data');
+          window.location = "index.php";
+        </script>
+        <?php
+        }
+        ?>
+
+
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="deletemodel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered btn-danger">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

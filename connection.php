@@ -10,5 +10,8 @@ if(!$conn)
 {
     echo "Error connecting";
 }
+else{
+   // echo "Connection established";
+}
 
 ?>

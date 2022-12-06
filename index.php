@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Form</title>
+  <title>Registration Form</title>
   <!-- ===CDN link for bootsrep === -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
-  <!-- ===FOnr link=== -->
+  <!-- ===font link=== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet" />
@@ -17,12 +17,12 @@
 </head>
 
 <body>
-  <h1 class="text-center bg-dark text-light">Student Details</h1>
+  <!-- <h1 class="text-center bg-dark text-light">Student Details</h1> -->
   <div class="Container mt-5">
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8 box">
-        <h3 class="mb-5 text-center"><u>Registration Form </u></h3>
+        <h3 class="mb-3 text-center"><u>Registration Form</u></h3>
 
         <form action="" method="POST" enctype="multipart/form-data">
           <div class="mb-3">
@@ -46,7 +46,7 @@
               <div class="col-6">
                 <h6 class="mb-2 pb-1">Gender:</h6>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gender" id="female" value="female" checked />
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female" />
                   <label class="form-check-label" for="female">Female</label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -64,7 +64,7 @@
             <div class="row">
               <div class="col-6">
                 <h6 for="email" class="form-label">
-                  EMAIL: <span class="disabled">(example@gmail.com)</span>
+                  EMAIL: <span class="text-secondary">(example@gmail.com)</span>
                 </h6>
                 <input type="email" name="email" id="email" class="form-control" />
               </div>
@@ -88,7 +88,7 @@
                         <input type="file" name="profile" id="profile" class="form-control">
                     </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary me-5" name="submit">
+            <button type="submit" class="btn mybtn me-5" name="submit">
               Submit
             </button>
             <button type="submit" class="btn btn-secondary">Reset</button>
