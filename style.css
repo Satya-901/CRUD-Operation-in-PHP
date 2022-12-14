@@ -9,8 +9,11 @@ body {
 }
 h3
 {
-    color: #f093fb;
+    color: #f093fb !important;
     /* background-color: #f093fb; */
+}
+a{
+    text-decoration: none !important;
 }
 .box {
     background-color: #fff;

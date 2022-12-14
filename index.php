@@ -110,6 +110,11 @@
 <?php
 if(isset($_POST['submit']))
 {
+    //............
+    $today = date("Ymd");
+    $rand = mt_rand(1000, 9999);
+    $unique = $today . $rand;
+    //...........
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $birthday = date('y-m-d', strtotime($_POST['bithday'])); //to convet date formet to match withthe MYSQL server date formet.
@@ -124,7 +129,7 @@ if(isset($_POST['submit']))
     move_uploaded_file($tempname, $profile);
 
 
-    $query = "INSERT INTO `form` (`fname`, `lname`, `birthday`, `gender`, `email`, `mobile`, `subject`, `profile`) VALUES ('$fname', '$lname', '$birthday', '$gender', '$email', '$mobile', '$subject','$profile')";
+    $query = "INSERT INTO `form` (`r_no`,`fname`, `lname`, `birthday`, `gender`, `email`, `mobile`, `subject`, `profile`) VALUES ('$unique','$fname', '$lname', '$birthday', '$gender', '$email', '$mobile', '$subject','$profile')";
     $data = mysqli_query($conn, $query);
     if($data)
     {

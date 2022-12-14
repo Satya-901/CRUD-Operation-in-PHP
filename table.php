@@ -20,7 +20,7 @@
 
 <body>
   <div class="container box mt-5">
-    <h3 class="mb-3 text-center"><u>Displaying All Records</u></h3>
+    <h3 class="mb-3 text-center"><a href="index.php"><u>Displaying All Records</u></a></h3>
     <table class="table align-middle mb-0  bg-light">
       <thead class="bg-secondary">
         <tr>
@@ -41,7 +41,6 @@
         $query = "SELECT * FROM `form`";
         $data = mysqli_query($conn, $query);
         $totle = mysqli_num_rows($data);
-
         //echo $totle;
         // $fname = $result['fname'];
         // $lname = $result['lname'];
@@ -58,7 +57,7 @@
         <tr>
           <td><img src="<?php echo $result['profile'] ?>" alt="profile" style="width: 45px; height: 45px" /></td>
           <td>
-            <p class="fw-normal mb-1">546871546</p>
+            <p class="fw-normal mb-1"><?php echo $result['r_no']; ?></p>
           </td>
           <td>
             <p class="fw-normal mb-1">
@@ -91,15 +90,13 @@
             </p>
           </td>
           <td>
-            <button type="button" class="btn mb-1 mybtn">Edit <i class="fa-solid fa-pen-to-square"></i></button>
-            <!-- <button type="button" class="btn mb-1 btn-danger"><i class="fa-solid fa-trash"></i></button> -->
-            <button type="button" class="btn mb-1 btn-danger" data-bs-toggle="modal" data-bs-target="#deletemodel"><i
-                class="fa-solid fa-trash"></i></button>
+            <a href="#" class="btn mb-1 mybtn">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="delete.php?id=$result[r_no]" class="btn mb-1 btn-danger"><i class="fa-solid fa-trash"></i></a>
           </td>
         </tr>
         <?php
           }
-          ?>
+        ?>
 
         <?php
         } else {
