@@ -90,8 +90,8 @@
             </p>
           </td>
           <td>
-            <a href="#" class="btn mb-1 mybtn">Edit <i class="fa-solid fa-pen-to-square"></i></a>
-            <a href="delete.php?id=$result[r_no]" class="btn mb-1 btn-danger"><i class="fa-solid fa-trash"></i></a>
+            <a href="update.php?id=<?php echo $result['id'] ?>" class="btn mb-1 mybtn">Edit <i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="delete.php?id=<?php echo $result['id'] ?>" class="btn mb-1 btn-danger"><i class="fa-solid fa-trash"></i></a>
           </td>
         </tr>
         <?php
